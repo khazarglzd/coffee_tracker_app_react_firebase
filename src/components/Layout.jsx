@@ -10,10 +10,6 @@ export default function Layout(props) {
                 <p>For Coffee Insatiates</p>
             </div>
 
-            <button>
-                <p>Logout</p>
-            </button>
-
             <button >
                 <p>Sign up free</p>
                 <i className="fa-solid fa-mug-hot"></i>
