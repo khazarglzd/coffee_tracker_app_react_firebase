@@ -6,7 +6,7 @@ export default function Layout(props) {
     const header = (
         <header>
             <div>
-                <h1 className="text-gradient">COFFEELAND</h1>
+                <h1 className="text-gradient">COFFEEMANIA</h1>
                 <p>For Coffee Insatiates</p>
             </div>
 
@@ -19,7 +19,7 @@ export default function Layout(props) {
 
     const footer = (
         <footer>
-            <p><span className="text-gradient">CoffeLand</span> was made by <a target="_blank" >Khazar Guluzade </a> <br />Check out the project on <a target="_black" href="https://github.com/khazarglzd?tab=overview&from=2024-11-01&to=2024-11-02">GitHub</a>!</p>
+            <p><span className="text-gradient">CoffeMania</span> was made by <a target="_blank" >Khazar Guluzade </a> <br />Check out the project on <a target="_black" href="https://github.com/khazarglzd?tab=overview&from=2024-11-01&to=2024-11-02">GitHub</a>!</p>
         </footer>
     )
 
