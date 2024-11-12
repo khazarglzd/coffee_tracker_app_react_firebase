@@ -12,12 +12,7 @@ function StatCard(props) {
 
 export default function Stats() {
 
-    const stats = {
-        daily_caffeine: 240,
-        daily_cost: 15,
-        average_coffees: 2.3,
-        total_cost: 220
-    }
+    const stats = calculateCoffeeStats(coffeeConsumptionHistory)
 
     const caffeineLevel = calculateCurrentCaffeineLevel(coffeeConsumptionHistory)
 
@@ -48,6 +43,26 @@ export default function Stats() {
                     <p>$ <span className="stat-text">{stats.total_cost}</span></p>
                 </StatCard>
             </div>
+            <table className="stat-table">
+                <thead>
+                    <tr>
+                        <th>Coffee Name</th>
+                        <th>Number of Purchase</th>
+                        <th>Percentage of Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {getTopThreeCoffees(coffeeConsumptionHistory).map((coffee, coffeeIndex) => {
+                        return (
+                            <tr key={coffeeIndex}>
+                                <td>{coffee.coffeeName}</td>
+                                <td>{coffee.count}</td>
+                                <td>{coffee.percentage}</td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+            </table>
         </>
     )
 }
