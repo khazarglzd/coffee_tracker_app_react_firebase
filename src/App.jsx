@@ -8,7 +8,7 @@ import "./index.css"
 
 function App() {
 
-  const isAuthenticated = false
+  const isAuthenticated = true
 
   const authenticatedContent = (
     <>
