@@ -8,7 +8,7 @@ import "./index.css"
 
 function App() {
 
-  const isAuthenticated = true
+  const isAuthenticated = false
 
   const authenticatedContent = (
     <>
@@ -20,7 +20,7 @@ function App() {
   return (
     <Layout>
       <Hero />
-      <CofeeForm />
+      <CofeeForm isAuthenticated={isAuthenticated} />
       {
         isAuthenticated && (authenticatedContent)
       }
