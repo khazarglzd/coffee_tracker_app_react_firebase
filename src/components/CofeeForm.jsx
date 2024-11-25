@@ -21,11 +21,15 @@ const CofeeForm = (props) => {
         console.log(selectedCoffee, coffeeCost, hour, min)
     }
 
+    function handleCloseModal() {
+        setShowModal(false)
+    }
+
     return (
         <>
             {showModal && (
-                <Modal handleCloseModal={() => { setShowModal(false) }}>
-                    <Authentication />
+                <Modal handleCloseModal={handleCloseModal}>
+                    <Authentication handleCloseModal={handleCloseModal} />
                 </Modal>
             )
             }
