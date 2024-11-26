@@ -3,12 +3,15 @@ import Layout from './components/Layout'
 import Hero from "./components/Hero"
 import Stats from "./components/Stats"
 import History from "./components/History"
-import CofeeForm from "./components/CofeeForm"
+import CoffeeForm from "./components/CoffeeForm"
 import "./index.css"
+import { useAuth } from "./context/AuthContext"
 
 function App() {
 
-  const isAuthenticated = false
+  const { globalUser, isLoading, globalData } = useAuth()
+  const isAuthenticated = globalUser
+  const isData = globalData && !!Object.keys(globalData || {}).length
 
   const authenticatedContent = (
     <>
@@ -20,10 +23,11 @@ function App() {
   return (
     <Layout>
       <Hero />
-      <CofeeForm isAuthenticated={isAuthenticated} />
-      {
-        isAuthenticated && (authenticatedContent)
-      }
+      <CoffeeForm isAuthenticated={isAuthenticated} />
+      {(isAuthenticated && isLoading) && (
+        <p>Loading data...</p>
+      )}
+      {(isAuthenticated && isData) && (authenticatedContent)}
     </Layout>
   )
 }
